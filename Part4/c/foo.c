@@ -3,20 +3,35 @@
 
 int i = 0;
 
+// Threads are not implemented in C by default, which is why one
+// writes 'C/POCIX'
+
 // Note the return type: void*
-void* incrementingThreadFunction(){
-    // TODO: increment i 1_000_000 times
+void* incrementingThreadFunction()
+{
+    for (int j = 0; j < 1000000; ++j)
+    {
+	++i;	
+    }
+
     return NULL;
 }
 
-void* decrementingThreadFunction(){
-    // TODO: decrement i 1_000_000 times
+void* decrementingThreadFunction()
+{
+    for (int j = 0; j < 1000000; ++j)
+    {
+	--i;
+    }
     return NULL;
 }
 
 
-int main(){
-    // TODO: declare incrementingThread and decrementingThread (hint: google pthread_create)
+int main()
+{
+    pthread_t incrementingThread;
+    pthread_t decrementingThread;
+    
     pthread_create(&incrementingThread, NULL, incrementingThreadFunction, NULL);
     pthread_create(&decrementingThread, NULL, decrementingThreadFunction, NULL);
     
