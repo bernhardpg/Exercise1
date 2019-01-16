@@ -24,7 +24,7 @@ Concurrency makes programming more complex, but at the same time, it allows deve
  
 
 ### What are the differences between processes, threads, green threads, and coroutines?
-> Processes are OS-managed and owns its own memory and threads. A thread can run on the CPU. Green threads are not OS-managed threads, but are scheduled by an 'ordinary' user-lever process, not by the kernel. A coroutine is simular to a thread, with its of stack, own local variables and its own instruction points, but it shares global variables and mostly anything else with other coroutines.
+> Processes are OS-managed and owns its own memory and threads. A thread can run on the CPU, and there are two types of threads, user space threads and kernel space threads. Green threads are threads in the user space, i.e. not OS-managed threads, but are scheduled by an 'ordinary' user-lever process, not by the kernel. A coroutine is simular to a thread, with its of stack, own local variables and its own instruction points, but it shares global variables and mostly anything else with other coroutines.
  
 
 ### Which one of these do `pthread_create()` (C/POSIX), `threading.Thread()` (Python), `go` (Go) create?
