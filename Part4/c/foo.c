@@ -13,6 +13,7 @@ void* incrementingThreadFunction()
     {
 	++i;	
     }
+   
 
     return NULL;
 }
@@ -23,6 +24,7 @@ void* decrementingThreadFunction()
     {
 	--i;
     }
+
     return NULL;
 }
 
